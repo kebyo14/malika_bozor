@@ -13,25 +13,28 @@
 
     <div class="div">
 
-        <h1>Malika Bozor</h1>
+        <h1> <a href="{% url 'product_list' %}"> Malika Bozor</a></h1>
     </div>
     <div>
         <ul>
-            <li ><a href="">About us</a> </li>
-            <li ><a href="">Home</a> </li>
-            <li ><a href="">Shop</a> </li>
-            <li ><a href="">Documentation</a> </li>
+            <li ><a href="" class="cilka">  About us</a> </li>
+            <li ><a href="" class="cilka">Home</a> </li>
+            <li ><a href="" class="cilka">Shop</a> </li>
+            <li ><a href="" class="cilka">Documentation</a> </li>
            
         </ul>
     </div>
 </nav>
-<h1>{{ product.name }}</h1>
-{% if product.image %}
-<img src="{{ product.image.url }}" alt="{{ product.name }}" width="300px">
-{% endif %}
-<p>{{ product.description }}</p>
-<p>Price: ${{ product.price }}</p>
+<div class="table_detail">
 
-<a href="{% url 'product_update' product.pk %}">Edit</a> |
-<a href="{% url 'product_delete' product.pk %}">Delete</a> |
-<a href="{% url 'product_list' %}">Back to list</a>
+    <h1>{{ product.name }}</h1>
+    {% if product.image %}
+    <img src="{{ product.image.url }}" alt="{{ product.name }}" width="240px">
+    {% endif %}
+    <p>{{ product.description }}</p>
+    <p>Price: ${{ product.price }}</p>
+    
+    <a href="{% url 'product_update' product.pk %}">Edit</a> 
+    <a href="{% url 'product_delete' product.pk %}">Delete</a> 
+    <a href="{% url 'product_list' %}">Back to list</a>
+</div>

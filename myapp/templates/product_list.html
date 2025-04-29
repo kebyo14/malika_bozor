@@ -13,10 +13,10 @@
     <nav>
         <div class="div">
 
-            <h1>Malika Bozor</h1>
+            <h1> <a href="{% url 'product_list' %}"> Malika Bozor</a></h1>
         </div>
         <div>
-            <ul>
+            <ul class="ull">
                 <li ><a href="">About us</a> </li>
                 <li ><a href="">Home</a> </li>
                 <li ><a href="">Shop</a> </li>
@@ -31,12 +31,15 @@
         </div>
     </div>
 
-    <h2>Products</h2>
-<a href="{% url 'product_create' %}">Add Product</a>
+    <div class="pr">
+        <h2>Products</h2>
 
-<div style="display: flex; gap: 20px; margin-left: 20px;">
+        <a href="{% url 'product_create' %}" class="add">Add Product</a>
+    </div>
+
+<div style="display: flex; gap: 20px; margin-left: 20px; margin-top: 20px;" >
     {% for product in products %}
-    <div style="border: 1px solid black; padding: 20px; width: 200px; margin-left: 20px;">
+    <div style="border: 1px solid black; padding: 20px; width: 200px; margin-left: 20px;" class="tables">
         {% if product.image %}
         <img src="{{ product.image.url }}" alt="{{ product.name }}" width="100%">
         {% endif %}
